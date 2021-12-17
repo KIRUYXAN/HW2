@@ -14,17 +14,18 @@ Console.WriteLine("Введите ваше вес в кг:");
 double m = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Введите вашу рост в см: ");
 double h = Convert.ToDouble(Console.ReadLine()) / 100;
+string text = "";
 
 double bmi = m / (h * h);                      //body mass index
 double normm = (21.75 / (h * h)) * 2;         //normal midle
 
-Console.WriteLine("");
-Console.WriteLine($"Ваш ИМТ: {bmi:F2}");
 if (bmi < 18.5)
-    Console.WriteLine($"Пониженый. Вам надо набрать ещё {normm:F2} кг для нормального ИМТ");
+    text = $"Пониженый. Вам надо набрать {normm:F2} кг для нормального ИМТ";
 else if (bmi > 18.5 && bmi < 25)
-    Console.WriteLine($"Нормальный");
+    text = $"Нормальный";
 else if (bmi > 25 && bmi < 30 )
-    Console.WriteLine($"Повышеный. Вам надо похудеть ещё на {normm:F2} кг для нормального ИМТ");
-else if (bmi >30)
-    Console.WriteLine($"Избыточный. Вам надо збросить {normm*2:F2} кг для нормального ИМТ");
+    text = $"Повышеный. Вам надо похудеть на {normm:F2} кг для нормального ИМТ";
+else
+    text = $"Избыточный. Вам надо збросить {normm*2:F2} кг для нормального ИМТ";
+Console.WriteLine("");
+Console.WriteLine($"Ваш ИМТ: {bmi:F2}\n{text}");

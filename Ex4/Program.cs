@@ -9,7 +9,7 @@
 // Login: root   Password: GeekBrains
 
 int err = 3;
-bool a;
+bool a = false;
 do
 {
     Console.WriteLine("Введите логин");
@@ -24,12 +24,10 @@ do
     }
     else
     {
-        a = false;
         Console.WriteLine(a);
         err--;
         Console.WriteLine($"У вас осталось {err} попытки");
         Console.WriteLine("");
     }
 } while (err != 0);
-if (a == false) 
-    Console.WriteLine("Вы заблокированы");
+if (a == false) Console.WriteLine("Вы заблокированы");
