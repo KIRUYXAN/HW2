@@ -2,8 +2,8 @@
 «Хорошим» называется число, которое делится на сумму своих цифр.
 Реализовать подсчёт времени выполнения программы, используя структуру DateTime.*/
 
-double a = 0;
-double b = 0;
+double a;
+double b;
 double c = 0;
 int good = 0;
 
@@ -12,7 +12,6 @@ DateTime st = DateTime.Now;
 for (double i = 1; i <= 1000000000; i++)   //Числа от 1 до 1000000000
 {
     a = i;
-    c = 0;
     Console.WriteLine($"i {i}");              // Инфо об        i
     while (a > 0)                              //Сумма цифр числа
     {
